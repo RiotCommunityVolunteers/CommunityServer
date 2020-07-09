@@ -57,9 +57,11 @@
 --%>
         <div class="auth-form_submenu_login clearFix">
             <asp:PlaceHolder ID="pwdReminderHolder" runat="server" />
+<%-- Remove E-Mail Login, only using Phabricator
             <a id="loginButton" class="button blue big signIn" onclick="jQuery('#authMessage').hide(); jQuery('.pwdLoginTextbox').removeClass('error'); Authorize.Login(); return false;">
                 <%= Resource.LoginButton %>
             </a>
+--%>
         </div>
         <% if (RecaptchaEnable && ShowRecaptcha)
            { %>
