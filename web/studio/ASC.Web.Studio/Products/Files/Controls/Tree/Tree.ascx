@@ -14,6 +14,7 @@
     <ul>
         <% if (!IsVisitor)
            { %>
+<%-- Only Common Documents are needed
         <li data-id="<%= Global.FolderMy %>" class="tree-node jstree-closed">
             <div class="jstree-wholerow">&nbsp;</div>
             <span class="jstree-icon jstree-expander"></span>
@@ -26,6 +27,7 @@
             <span class="new-label-menu is-new" title="<%= FilesUCResource.RemoveIsNew %>" data-id="<%= Global.FolderMy %>"></span>
             <% } %>
         </li>
+--%>
         <% } %>
 
         <% if (!CoreContext.Configuration.Personal)
@@ -33,6 +35,7 @@
 
         <% if (!Global.IsOutsider)
            { %>
+<%-- Only Common Documents are needed
         <li data-id="<%= Global.FolderShare %>" class="tree-node jstree-closed access-read">
             <div class="jstree-wholerow">&nbsp;</div>
             <span class="jstree-icon jstree-expander"></span>
@@ -45,6 +48,7 @@
             <span class="new-label-menu is-new" title="<%= FilesUCResource.RemoveIsNew %>" data-id="<%= Global.FolderShare %>"></span>
             <% } %>
         </li>
+--%>
         <% } %>
 
         <li data-id="<%= Global.FolderCommon %>" class="tree-node jstree-closed <%= Global.IsAdministrator ? string.Empty : "access-read" %>">
