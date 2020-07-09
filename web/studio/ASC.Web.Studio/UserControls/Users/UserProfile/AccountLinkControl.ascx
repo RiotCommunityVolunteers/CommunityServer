@@ -4,17 +4,21 @@
 
 <% if (SettingsView)
    { %>
+<%--
 <div id="accountLinks"></div>
+--%>
 <% }
    else
    { %>
 
 <% if (InviteView)
    { %>
+<%--
 <div id="social">
     <div><%= Resource.LoginWithAccount %></div>
+--%>
 <% } %>
-
+<%--
 <ul class="account-links">
     <% foreach (var acc in Infos)
         { %>
@@ -25,6 +29,7 @@
     </li>
     <% } %>
 </ul>
+--%>
 
 <% if (InviteView)
    { %>
