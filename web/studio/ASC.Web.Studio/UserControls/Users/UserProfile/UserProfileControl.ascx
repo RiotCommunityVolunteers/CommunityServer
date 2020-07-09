@@ -234,6 +234,7 @@
 
 <% if (ShowSocialLogins && AccountLinkControl.IsNotEmpty && !IsPersonal)
     { %>
+<%--
 <div class="user-block social-logins">
     <div class="tabs-section">
         <span class="header-base"><%= Resource.LoginSocialNetworks %></span>
@@ -242,8 +243,11 @@
             <%= Resource.Hide %>
         </span>
     </div>
+--%>
     <asp:PlaceHolder runat="server" ID="_accountPlaceholder"></asp:PlaceHolder>
+<%--
 </div>
+--%>
 <% } %>
 
 <% if (!String.IsNullOrEmpty(UserInfo.Notes.HtmlEncode()))
