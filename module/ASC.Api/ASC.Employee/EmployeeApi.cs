@@ -1391,6 +1391,8 @@ namespace ASC.Api.Employee
                     return "Twitter";
                 case "linkedin":
                     return "LinkedIn";
+                case "phabricator":
+                    return "Phabricator";
                 default:
                     return "Unknown Provider";
             }

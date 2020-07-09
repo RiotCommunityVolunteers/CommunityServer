@@ -98,10 +98,7 @@ namespace ASC.Web.Studio.UserControls.Common.ThirdPartyBanner
                      || currentProductId == WebItemManager.PeopleProductID)
                     && !ThirdPartyBannerSettings.CheckClosed("social")
                     && 
-                    (!TwitterLoginProvider.Instance.IsEnabled || 
-                    !FacebookLoginProvider.Instance.IsEnabled || 
-                    !LinkedInLoginProvider.Instance.IsEnabled || 
-                    !GoogleLoginProvider.Instance.IsEnabled))
+                    (!PhabricatorLoginProvider.Instance.IsEnabled || !TwitterLoginProvider.Instance.IsEnabled || !FacebookLoginProvider.Instance.IsEnabled || !LinkedInLoginProvider.Instance.IsEnabled || !GoogleLoginProvider.Instance.IsEnabled))
                 {
                     yield return new Tuple<string, string>("social", UserControlsCommonResource.BannerSocial);
                 }

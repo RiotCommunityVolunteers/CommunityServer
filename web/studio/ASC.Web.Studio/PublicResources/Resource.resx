@@ -2187,7 +2187,7 @@ Are you sure want to delete the {0} {!group}?</value>
     <value>Login via Social Networks</value>
   </data>
   <data name="LoginWithAccount" xml:space="preserve">
-    <value>or login with:</value>
+    <value>Login with:</value>
   </data>
   <data name="LoginWithAccountNotFound" xml:space="preserve">
     <value>Can't find associated third party account. You need to connect your social networking account at the profile editing page first.</value>

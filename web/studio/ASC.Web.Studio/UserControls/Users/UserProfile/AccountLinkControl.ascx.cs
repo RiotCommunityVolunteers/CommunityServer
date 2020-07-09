@@ -51,6 +51,7 @@ namespace ASC.Web.Studio.UserControls.Users.UserProfile
                 ProviderConstants.Facebook,
                 ProviderConstants.Twitter,
                 ProviderConstants.LinkedIn,
+                ProviderConstants.Phabricator,
                 ProviderConstants.MailRu,
                 ProviderConstants.VK,
                 ProviderConstants.Yandex,
