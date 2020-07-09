@@ -39,5 +39,6 @@ namespace ASC.FederatedLogin
         public const string VK = "vk";
         public const string GosUslugi = "gosuslugi";
         public const string Encryption = "blockchain";
+        public const string Phabricator = "phabricator";
     }
 }

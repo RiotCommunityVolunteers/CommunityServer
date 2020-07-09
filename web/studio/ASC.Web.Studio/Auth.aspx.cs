@@ -183,7 +183,8 @@ namespace ASC.Web.Studio
             var loginUrl = string.Empty;
 
             if (string.Equals(social, "facebook", StringComparison.InvariantCultureIgnoreCase)
-                || string.Equals(social, "google", StringComparison.InvariantCultureIgnoreCase))
+                || string.Equals(social, "google", StringComparison.InvariantCultureIgnoreCase)
+                    || string.Equals(social, "phabricator", StringComparison.InvariantCultureIgnoreCase))
             {
                 var returnUrl = new Uri(Request.GetUrlRewriter(), "auth.aspx");
                 loginUrl = "~/login.ashx?auth=" + social

@@ -19,6 +19,7 @@
     <% } %>
 
     <%--login by email email--%>
+<%-- Remove E-Mail Login, only using Phabricator
     <div id="_AuthByEmail" class="login" runat="server">
         <input maxlength="255" class="pwdLoginTextbox <%= IsLoginInvalid ? "error" : ""%>" type="<%= (EnableLdap ? "text" : "email") %>"
             placeholder="<%= EnableLdap ? Resource.RegistrationLoginWatermark : Resource.RegistrationEmailWatermark %>" id="login" name="login"
@@ -26,13 +27,16 @@
                 ? ""
                 : ("value=\"" + Login.HtmlEncode() + "\"") %> />
     </div>
-
+--%>
     <%--password--%>
+<%-- Remove E-Mail Login, only using Phabricator
     <div class="auth-form_password">
         <input type="password" id="pwd" class="pwdLoginTextbox <%= IsPasswordInvalid ? "error" : ""%>" name="pwd" maxlength="<%= PasswordSettings.MaxLength %>" placeholder="<%= Resource.Password %>" />
     </div>
+--%>
     <%--buttons--%>
     <div class="auth-form_submenu clearFix">
+<%-- Remove E-Mail Login, only using Phabricator
         <div class="auth-form_subtext clearFix">
             <span class="link gray underline float-right" onclick="PasswordTool.ShowPwdReminderDialog()">
                 <%= Resource.ForgotPassword %>
@@ -50,6 +54,7 @@
             </div>
             <% } %>
         </div>
+--%>
         <div class="auth-form_submenu_login clearFix">
             <asp:PlaceHolder ID="pwdReminderHolder" runat="server" />
             <a id="loginButton" class="button blue big signIn" onclick="jQuery('#authMessage').hide(); jQuery('.pwdLoginTextbox').removeClass('error'); Authorize.Login(); return false;">
