@@ -18,7 +18,6 @@
     <div><%= Resource.LoginWithAccount %></div>
 --%>
 <% } %>
-<%--
 <ul class="account-links">
     <% foreach (var acc in Infos)
         { %>
@@ -29,8 +28,6 @@
     </li>
     <% } %>
 </ul>
---%>
-
 <% if (InviteView)
    { %>
 </div>
