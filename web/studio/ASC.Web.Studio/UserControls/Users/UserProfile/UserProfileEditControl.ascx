@@ -68,7 +68,7 @@
                 <td class="userdata-title describe-text requiredTitle"><%= Resource.FirstName %></td>
                 <td class="userdata-value requiredField">
                     <div class="validationField">
-                        <input type="text" id="profileFirstName" class="textEdit" value="<%= FirstName %>" autocomplete="off" <%= IsPageEditProfileFlag && (IsLdapField(LdapSettings.MappingFields.FirstNameAttribute) || ProfileIsSso) ? "disabled" : "" %> <%= IsLdapField(LdapSettings.MappingFields.FirstNameAttribute) ? " title=\"" + Resource.LdapUserEditCanOnlyAdminTitle + "\"" : ( ProfileIsSso ? " title=\"" + Resource.SsoUserEditCanOnlyAdminTitle + "\"" : " title=\"" + Resource.FirstName + "\"") %>/>
+                        <input disabled type="text" id="profileFirstName" class="textEdit" value="<%= FirstName %>" autocomplete="off" <%= IsPageEditProfileFlag && (IsLdapField(LdapSettings.MappingFields.FirstNameAttribute) || ProfileIsSso) ? "disabled" : "" %> <%= IsLdapField(LdapSettings.MappingFields.FirstNameAttribute) ? " title=\"" + Resource.LdapUserEditCanOnlyAdminTitle + "\"" : ( ProfileIsSso ? " title=\"" + Resource.SsoUserEditCanOnlyAdminTitle + "\"" : " title=\"" + Resource.FirstName + "\"") %>/>
                         <span class="validationText"></span>
                     </div>
                 </td>
@@ -78,7 +78,7 @@
                 <td class="userdata-title describe-text requiredTitle"><%= Resource.LastName %></td>
                 <td class="userdata-value requiredField">
                     <div class="validationField">
-                        <input type="text" id="profileSecondName" class="textEdit" value="<%= LastName %>" autocomplete="off" <%= IsPageEditProfileFlag && (IsLdapField(LdapSettings.MappingFields.SecondNameAttribute) || ProfileIsSso) ? "disabled" : "" %> <%= IsLdapField(LdapSettings.MappingFields.FirstNameAttribute) ? " title=\"" + Resource.LdapUserEditCanOnlyAdminTitle + "\"" : ( ProfileIsSso ? " title=\"" + Resource.SsoUserEditCanOnlyAdminTitle + "\"" : " title=\"" + Resource.LastName + "\"") %>/>
+                        <input disabled type="text" id="profileSecondName" class="textEdit" value="<%= LastName %>" autocomplete="off" <%= IsPageEditProfileFlag && (IsLdapField(LdapSettings.MappingFields.SecondNameAttribute) || ProfileIsSso) ? "disabled" : "" %> <%= IsLdapField(LdapSettings.MappingFields.FirstNameAttribute) ? " title=\"" + Resource.LdapUserEditCanOnlyAdminTitle + "\"" : ( ProfileIsSso ? " title=\"" + Resource.SsoUserEditCanOnlyAdminTitle + "\"" : " title=\"" + Resource.LastName + "\"") %>/>
                         <span class="validationText"></span>
                     </div>
                 </td>
@@ -170,11 +170,12 @@
             <tr class="userdata-field">
                 <td class="userdata-title describe-text"><%= Resource.Birthdate %></td>
                 <td class="userdata-value requiredField">
-                    <input type="text" id="profileBirthDate" class="textCalendar textEditCalendar" value="<%= BirthDate %>" data-value="<%= BirthDate %>"  <%= IsLdapField(LdapSettings.MappingFields.BirthDayAttribute) ? "disabled" : "" %> <%= IsLdapField(LdapSettings.MappingFields.BirthDayAttribute) ? " title=\"" + Resource.LdapUserEditCanOnlyAdminTitle + "\"" : " title=\"" + Resource.Birthdate + "\"" %>  autocomplete="off"/>
+                    <input disabled type="text" id="profileBirthDate" class="textCalendar textEditCalendar" value="<%= BirthDate %>" data-value="<%= BirthDate %>"  <%= IsLdapField(LdapSettings.MappingFields.BirthDayAttribute) ? "disabled" : "" %> <%= IsLdapField(LdapSettings.MappingFields.BirthDayAttribute) ? " title=\"" + Resource.LdapUserEditCanOnlyAdminTitle + "\"" : " title=\"" + Resource.Birthdate + "\"" %>  autocomplete="off"/>
                     <span class="requiredErrorText"><%= Resource.ErrorNotCorrectDate %></span>
                 </td>
             </tr>
             <%--Sex--%>
+<%--
             <tr class="userdata-field">
                 <td class="userdata-title describe-text"><%= Resource.Sex %></td>
                 <td class="userdata-value">
@@ -184,6 +185,7 @@
                     </div>
                 </td>
             </tr>
+--%>
             <tr><td><br/></td></tr>
             <%--Department--%>
             <% if ((CurrentUserIsPeopleAdmin || Departments.Length != 0) && !IsPersonal) { %>
@@ -208,7 +210,7 @@
             <tr class="userdata-field">
                 <td class="userdata-title describe-text"><%= CustomNamingPeople.Substitute<Resource>("UserPost").HtmlEncode() %></td>
                 <td class="userdata-value requiredField">
-                    <input type="text" id="profilePosition" class="textEdit" value="<%= Position %>" autocomplete="off" <%= IsPageEditProfileFlag && (!CurrentUserIsPeopleAdmin || IsLdapField(LdapSettings.MappingFields.TitleAttribute) || ProfileIsSso) ? "disabled" : "" %> <%= IsLdapField(LdapSettings.MappingFields.TitleAttribute) ? " title=\"" + Resource.LdapUserEditCanOnlyAdminTitle + "\"" : ( ProfileIsSso ? " title=\"" + Resource.SsoUserEditCanOnlyAdminTitle + "\"" : " title=\"" + CustomNamingPeople.Substitute<Resource>("UserPost").HtmlEncode() + "\"") %>/>
+                    <input disabled type="text" id="profilePosition" class="textEdit" value="<%= Position %>" autocomplete="off" <%= IsPageEditProfileFlag && (!CurrentUserIsPeopleAdmin || IsLdapField(LdapSettings.MappingFields.TitleAttribute) || ProfileIsSso) ? "disabled" : "" %> <%= IsLdapField(LdapSettings.MappingFields.TitleAttribute) ? " title=\"" + Resource.LdapUserEditCanOnlyAdminTitle + "\"" : ( ProfileIsSso ? " title=\"" + Resource.SsoUserEditCanOnlyAdminTitle + "\"" : " title=\"" + CustomNamingPeople.Substitute<Resource>("UserPost").HtmlEncode() + "\"") %>/>
                     <span class="requiredErrorText"><%= Resource.ErrorMessageLongField64 %></span>
                 </td>
             </tr>
@@ -217,7 +219,7 @@
             <tr class="userdata-field">
                 <td class="userdata-title describe-text"><%= Resource.Location %></td>
                 <td class="userdata-value requiredField">
-                    <input type="text" id="profilePlace" class="textEdit" value="<%= Place %>" autocomplete="off" <%= IsPageEditProfileFlag && (IsLdapField(LdapSettings.MappingFields.LocationAttribute) || ProfileIsSso) ? "disabled" : "" %> <%= IsLdapField(LdapSettings.MappingFields.LocationAttribute) ? " title=\"" + Resource.LdapUserEditCanOnlyAdminTitle + "\"" : (ProfileIsSso ? " title=\"" + Resource.SsoUserEditCanOnlyAdminTitle + "\""  : " title=\"" + Resource.Location + "\"") %> />
+                    <input disabled type="text" id="profilePlace" class="textEdit" value="<%= Place %>" autocomplete="off" <%= IsPageEditProfileFlag && (IsLdapField(LdapSettings.MappingFields.LocationAttribute) || ProfileIsSso) ? "disabled" : "" %> <%= IsLdapField(LdapSettings.MappingFields.LocationAttribute) ? " title=\"" + Resource.LdapUserEditCanOnlyAdminTitle + "\"" : (ProfileIsSso ? " title=\"" + Resource.SsoUserEditCanOnlyAdminTitle + "\""  : " title=\"" + Resource.Location + "\"") %> />
                     <span class="requiredErrorText"><%= Resource.ErrorMessageLongField255 %></span>
                 </td>
             </tr>
@@ -226,7 +228,7 @@
                 <tr class="userdata-field">
                     <td class="userdata-title describe-text"><%= CustomNamingPeople.Substitute<Resource>("WorkFromDate").HtmlEncode() %></td>
                     <td class="userdata-value requiredField">
-                        <input type="text" id="profileRegistrationDate" class="textCalendar textEditCalendar" value="<%= WorkFromDate %>" data-value="<%= WorkFromDate %>" <%= IsPageEditProfileFlag && !CurrentUserIsPeopleAdmin ? "disabled" : "" %> title="<%= CustomNamingPeople.Substitute<Resource>("WorkFromDate").HtmlEncode() %>"  autocomplete="off"/>
+                        <input disabled type="text" id="profileRegistrationDate" class="textCalendar textEditCalendar" value="<%= WorkFromDate %>" data-value="<%= WorkFromDate %>" <%= IsPageEditProfileFlag && !CurrentUserIsPeopleAdmin ? "disabled" : "" %> title="<%= CustomNamingPeople.Substitute<Resource>("WorkFromDate").HtmlEncode() %>"  autocomplete="off"/>
                         <span class="requiredErrorText"><%= Resource.ErrorNotCorrectDate %></span>
                     </td>
                 </tr>

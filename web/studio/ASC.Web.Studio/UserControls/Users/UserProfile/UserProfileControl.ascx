@@ -109,11 +109,13 @@
 
                             <% if (Actions.AllowEdit && UserInfo.Status != EmployeeStatus.Terminated && UserInfo.ActivationStatus == EmployeeActivationStatus.Activated && !UserInfo.IsLDAP() && !UserInfo.IsSSO())
                                { %>
+<%--
                             <div class="field">
                                 <span class="field-title describe-text"><%= Resource.Password %>:</span>
                                 <span id="passwordUserProfile" class="field-value">********</span>
                                 <a onclick="PasswordTool.ShowPwdReminderDialog('1','<%= UserInfo.Email %>'); return false;" class="baseLinkAction">&nbsp;</a>
                             </div>
+--%>
                             <% } %>
 
                             <% if (UserInfo.IsMe())
@@ -124,15 +126,19 @@
                             <% if (ShowPrimaryMobile)
                                { %>
                             <div class="field">
+<%--
                                 <span class="field-title describe-text"><%= Resource.MobilePhone %>:</span>
                                 <span id="phoneUserProfile" class="field-value">
+--%>
                                     <% if (!String.IsNullOrEmpty(UserInfo.MobilePhone))
                                        { %>
                                     <span class="primarymobile">+<%= SmsSender.GetPhoneValueDigits(UserInfo.MobilePhone) %></span>
                                     <% } %>
                                     <% if (Actions.AllowEdit && (!UserInfo.IsLDAP() || UserInfo.IsLDAP() && !LdapFields.Contains(LdapSettings.MappingFields.MobilePhoneAttribute)))
                                        { %>
+<%--
                                     <a onclick="ASC.Controls.UserMobilePhoneManager.openDialog();" class="baseLinkAction" title="<%= Resource.MobilePhoneChange %>"></a>
+--%>
                                     <% } %>
                                 </span>
                             </div>
