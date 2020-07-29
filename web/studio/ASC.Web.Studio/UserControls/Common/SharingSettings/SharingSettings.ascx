@@ -2,6 +2,7 @@
 
 <%@ Import Namespace="ASC.Core" %>
 <%@ Import Namespace="Resources" %>
+<%@ Import Namespace="ASC.Web.Files.Classes" %>
 
 <%@ Register TagPrefix="sc" Namespace="ASC.Web.Studio.Controls.Common" Assembly="ASC.Web.Studio" %>
 
@@ -11,7 +12,11 @@
             <span class="share-container-head"><%= UserControlsCommonResource.SharingSettingsTitle %></span>
         </Header>
         <Body>
+		 
+		  
             <div id="sharingSettingsDialogBody">
+			<% if (Global.IsAdministrator)
+           { %>
                 <% if (!CoreContext.Configuration.Personal)
                    { %>
                 <div class="add-to-sharing-links">
@@ -50,7 +55,9 @@
                         <a class="sharing-cancel-button button middle gray"><%= Resource.CancelButton %></a>
                     </div>
                 </div>
+				<% } %>
             </div>
+			 
         </Body>
     </sc:Container>
 </div>

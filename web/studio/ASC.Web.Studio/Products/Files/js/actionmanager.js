@@ -218,8 +218,8 @@ window.ASC.Files.Actions = (function () {
             }
             jq("#buttonEmptyTrash").show();
             jq("#mainEmptyTrash").addClass("unlockAction");
-        } else if (ASC.Files.Folders.folderContainer != "project" && countCanShare > 0) {
-            jq("#buttonShare").show().find("span").html(countCanShare);
+        } else if (ASC.Files.Folders.folderContainer != "project") {
+            //jq("#buttonShare").show().find("span").html(countCanShare);
             jq("#mainShare").addClass("unlockAction");
 
             var filesCount = jq("#filesMainContent .file-row:not(.checkloading):not(.new-folder):not(.new-file):not(.error-entry):not(.folder-row):has(.checkbox input:checked)").length;

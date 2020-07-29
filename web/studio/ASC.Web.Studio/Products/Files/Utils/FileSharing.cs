@@ -48,6 +48,7 @@ namespace ASC.Web.Files.Utils
             return
                 entry != null
                 && (entry.RootFolderType == FolderType.COMMON && Global.IsAdministrator
+				|| entry.RootFolderType == FolderType.COMMON && entry.CreateBy == SecurityContext.CurrentAccount.ID
                     || entry.RootFolderType == FolderType.USER
                     && (Equals(entry.RootFolderId, Global.FolderMy) || Global.GetFilesSecurity().CanEdit(entry))
                     && !CoreContext.UserManager.GetUsers(SecurityContext.CurrentAccount.ID).IsVisitor());

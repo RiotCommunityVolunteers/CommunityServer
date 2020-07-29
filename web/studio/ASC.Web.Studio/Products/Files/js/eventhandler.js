@@ -336,7 +336,7 @@ window.ASC.Files.EventHandler = (function () {
                 }
         }
 
-        if (ASC.Files.Share && ASC.Files.Folders.currentFolder.shareable
+        if (ASC.Files.Share
             && !ASC.Resources.Master.Personal) {
             jq("#mainShare").show();
         }
