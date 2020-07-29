@@ -38,25 +38,21 @@
         <% }
        if (Actions.AllowEdit && ProfileHelper.UserInfo.ActivationStatus == EmployeeActivationStatus.Activated && !ProfileHelper.UserInfo.IsLDAP() && !ProfileHelper.UserInfo.IsSSO())
            { %>
-<%--
         <li class="psw-change <%= (ProfileHelper.UserInfo.Status != EmployeeStatus.Terminated) ? "" :  "display-none"%>">
             <a title="<%= Resource.PasswordChangeButton %>"
                 class="dropdown-item">
                 <%= Resource.PasswordChangeButton %>
             </a>
         </li>
---%>
         <% }
        if (Actions.AllowEdit && ProfileHelper.UserInfo.ActivationStatus == EmployeeActivationStatus.Activated && !ProfileHelper.UserInfo.IsLDAP() && !ProfileHelper.UserInfo.IsSSO())
            { %>
-<%--
         <li class="email-change <%= (ProfileHelper.UserInfo.Status != EmployeeStatus.Terminated) ? "" :  "display-none"%>">
             <a title="<%= Resource.EmailChangeButton %>"
                 class="dropdown-item">
                 <%= Resource.EmailChangeButton %>
             </a>
         </li>
---%>
         <% }
        if (Actions.AllowEdit && ProfileHelper.UserInfo.ActivationStatus != EmployeeActivationStatus.Activated && !ProfileHelper.UserInfo.IsSSO())
            { %>
@@ -87,11 +83,13 @@
         <% }
            if (MyStaff && !ProfileHelper.UserInfo.IsOwner() && !ProfileHelper.UserInfo.IsLDAP())
            { %>
+<%-- Don't allow account deletion
         <li class="delete-user">
             <a class="dropdown-item" title="<%= Resource.DeleteProfileButton %>">
                 <%= Resource.DeleteProfileButton %>
             </a>
         </li>
+--%>
         <% }
            if (Actions.AllowAddOrDelete && ProfileHelper.UserInfo.Status == EmployeeStatus.Terminated)
            { %>
