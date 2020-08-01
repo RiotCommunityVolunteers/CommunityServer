@@ -32,7 +32,7 @@ namespace ASC.Web.Core.Files
 {
     public static class ContentDispositionUtil
     {
-        public static string GetHeaderValue(string fileName, bool inline = false, bool withoutBase = false)
+        public static string GetHeaderValue(string fileName, bool inline = true, bool withoutBase = false)
         {
             // If fileName contains any Unicode characters, encode according
             // to RFC 2231 (with clarifications from RFC 5987)
@@ -43,7 +43,7 @@ namespace ASC.Web.Core.Files
                     : "{0}; filename=\"{1}\"; filename*=UTF-8''{2}";
 
                 return string.Format(str,
-                                     inline ? "inline" : "attachment",
+                                     inline ? "inline" : "inline",
                                      fileName,
                                      CreateRfc2231HeaderValue(fileName));
             }
@@ -56,7 +56,7 @@ namespace ASC.Web.Core.Files
             // if it contains Unicode, and it will not encode Unicode as we require here.
             // The Unicode test above is identical to the 4.0 FormatException test,
             // allowing this helper to give the same results in 4.0 and 4.5.         
-            var disposition = new ContentDisposition { FileName = fileName, Inline = inline };
+            var disposition = new ContentDisposition { FileName = fileName, Inline = true };
             return disposition.ToString();
         }
 
